@@ -1,0 +1,65 @@
+@use '../utils/mixins';
+@import '../utils/variables';
+
+
+.error {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 113px 58px;
+
+        @include mixins.lg {
+            padding: 130px 100px;
+            grid-gap: 139px;
+
+        }
+
+        .error-404 {
+            height: fit-content;
+            margin-bottom: 113px;
+
+            span {
+                font-size: 96px;
+                font-weight: 700;
+                color: $red;
+
+                @include mixins.lg {
+                    font-size: 288px;
+                }
+            }
+        }
+
+        .error-message {
+            height: fit-content;
+            margin-bottom: 113px;
+
+            p {
+                font-size: 20px;
+                line-height: 25px;
+                color: $red;
+                margin: 0;
+                text-align: center;
+
+                @include mixins.lg {
+                    font-size: 34px;
+                }
+
+            }
+
+        }
+
+        .error-back {
+            height: fit-content;
+            a {
+                font-size: 16px;
+                color: $red;
+
+                @include mixins.lg {
+                    font-size: 20px;
+                }
+            }
+        }    
+    }
+}

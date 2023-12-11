@@ -1,0 +1,79 @@
+@use '../utils/mixins';
+@import '../utils/variables';
+
+
+.collapse__container {
+    @include mixins.lg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .collapse-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $red;
+        border-radius: 5px;
+        margin-top: 20px;
+    
+        @include mixins.lg {
+            width: 100%;
+            margin-top: 30px;
+        }
+    
+        span {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 400;
+            color: $white;
+            padding: 10px;
+    
+            @include mixins.lg {
+                font-size: 20px;
+            }
+        }
+    
+        .opened-collapse-arrow {
+            .fa-angle-up {
+                color: $white;
+                font-size: 24px;
+                padding: 10px;
+    
+                &.clicked {
+                    transform: rotate(-180deg);
+                    transition: transform .7s ease-in; 
+                }
+    
+                &.unclicked {
+                    transition: transform .7s ease-in; 
+                }
+            }
+        }
+    } 
+    
+    .dropdown {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 600ms ease-out;
+        width: 100%;
+
+        p {
+            margin: 0;
+            color: $red;
+            display: flex;
+            flex-direction: column;
+            padding: 13px 22px 20px;
+            background-color: $lightgrey;
+            line-height: 1.5;
+
+        }
+    
+        &.dropdown-open { 
+            max-height: 350px;
+            border-radius: 5px;
+            width: 100%;
+            transition: max-height 600ms ease-in;
+        }
+    }
+}

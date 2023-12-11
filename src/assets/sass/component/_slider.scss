@@ -1,0 +1,66 @@
+@use '../utils/mixins';
+@import '../utils/variables';
+
+.arrows-container {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    top: 44%;
+
+    @include mixins.lg {
+        top: 42%;
+    }
+
+    .chevron {
+        color: $white;
+        font-size: 25px;
+        opacity: 0.8;
+        padding: 0 5px;
+
+        @include mixins.lg {
+            font-size: 50px;
+            padding: 0 15px;
+        }
+    }
+}
+
+.slider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+
+    
+    &.active {
+        opacity: 1;
+    }
+
+    img {
+        height: 255px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+
+        @include mixins.lg {
+            height: 415px;
+        }
+    }
+
+    .slider-page {
+        display: none;
+
+        @include mixins.lg {
+            display: block;
+            position: absolute;
+            left: 49%;
+            color: white;
+            bottom: 25px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+}
